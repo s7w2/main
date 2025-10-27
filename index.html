@@ -1,11 +1,149 @@
-<!DOCTYPE HTML>
-    <html>
-        <head>
-            <title> Wzbogać swój content</title>
-            <meta charset="utf-8">
-            <link rel="Stylesheet" href="styl.css">
-        </head>
-        <body>
-           <h1>wzbogać swój content</h1>
-        </body>
-    </html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S_wordzik</title>
+    <link rel="stylesheet" href="styl.css">
+
+</head>
+<body>
+    <!-- Nagłówek -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Strona Główna</a></li>
+                <li><a href="#about">O mnie</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sekcja główna -->
+    <section id="home" class="hero">
+        <h1>Daj Sobie pomóc</h1>
+        <p>Tworzę dynamiczne i emocjonujące historie poprzez precyzyjny montaż filmowy. Przekształcam surowy materiał w gotowe dzieło sztuki.</p>
+        <a href="#portfolio" class="btn">Zobacz moje prace</a>
+    </section>
+
+    <!-- O mnie -->
+    <section id="about">
+        <h2>O mnie</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Cześć, jestem Grzesiek, profesjonalny montażysta filmowy z 4 latami doświadczenia. Specjalizuję się w montażu filmów dynamicznych, podcastów, vlogów, shortów czy gameplay'ów oraz materiałów korporacyjnych.</p>
+                <p>Moja pasja do opowiadania historii poprzez obraz i dźwięk pozwala mi tworzyć materiały, które nie tylko przyciągają uwagę, ale także wywołują emocje i pozostają w pamięci na długo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <h2>Moje Projekty</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1131071127?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="art2"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                <div class="portfolio-info">
+                    <h3> Short forma </h3>
+                    <a href="https://www.youtube.com/watch?v=443ze91tZmc&t=2427s">Short z podcastu "Studio Twórców" </a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+         
+                <div class="portfolio-info">
+                    <h3></h3>
+                    <p> SOON </p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+          
+                <div class="portfolio-info">
+                    <h3></h3>
+                    <p> SOON</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                
+                <div class="portfolio-info">
+                    <h3>Vlog Podróżniczy</h3>
+                    <p>SOON.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usługi -->
+    <section id="services">
+        <h2>Usługi</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">🎬</div>
+                <h3>Montaż Filmów Promocyjnych</h3>
+                <p></p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🤳</div>
+                <h3>Montaż shortów</h3>
+                <p></p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📹</div>
+                <h3>Montaż Vlogów</h3>
+                <p></p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🎙️</div>
+                <h3>Montaż podcastów</h3>
+                <p></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Skontaktuj się ze mną</h3>
+                    <p>Jestem otwarty na nowe projekty i współprace. Kliknij przycisk poniżej, aby przejść do mojego profilu na Facebooku i skontaktować się ze mną.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Email:</strong> swordzik0@gmail.com
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-action">
+                    <a href="https://www.facebook.com/profile.php?id=61582993017461" target="_blank" class="btn-contact">
+                        <span class="fb-icon">f</span>
+                        Skontaktuj się przez Facebooka
+                    </a>
+                    <p class="contact-note">Kliknij powyższy przycisk, aby przejść do mojego profilu na Facebooku i wysłać wiadomość.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Płynne przewijanie do sekcji
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>
